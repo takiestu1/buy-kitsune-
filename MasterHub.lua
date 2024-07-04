@@ -1,23 +1,23 @@
--- Hàm để tham gia bên Hải quân (Marine)
 function JoinMarine()
     local player = game:GetService("Players").LocalPlayer
     local marineTeam = "Marine"  -- Tên team Hải quân
-    if game:GetService("Teams")[marineTeam] then
-        player.Team = game:GetService("Teams")[marineTeam]
+    local teams = game:GetService("Teams")
+    
+    if teams[marineTeam] then
+        player.Team = teams[marineTeam]
     else
         print("Không tìm thấy team Hải quân!")
     end
 end
 
--- Hàm để tự động mua trái ác quỷ Kitsune
 function AutoBuyDevilFruit()
     local player = game:GetService("Players").LocalPlayer
-    local shop = game:GetService("Workspace").Shop  -- Thay thế bằng đường dẫn thực tế đến shop
-    local fruit = "Kitsune"  -- Tên trái ác quỷ Kitsune trong shop
+    local shop = game:GetService("Workspace").FruitShop
+    local fruit = "Kitsune"
 
     if shop:FindFirstChild(fruit) then
         local fruitItem = shop[fruit]
-        if player:WaitForChild("leaderstats").Money.Value >= fruitItem.Price.Value then
+        if player.leaderstats.Beli.Value >= fruitItem.Cost.Value then
             local args = {
                 [1] = fruitItem.Name
             }
@@ -30,6 +30,5 @@ function AutoBuyDevilFruit()
     end
 end
 
--- Gọi hàm tham gia bên Hải quân và mua trái ác quỷ Kitsune
 JoinMarine()
 AutoBuyDevilFruit()
