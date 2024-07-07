@@ -2259,6 +2259,15 @@ local Section = W:AddSection({
 	Name = "Update"
 })
 
+IQ:AddToggle({
+	Name = "Auto Second Sea",
+	Default = true,
+	Callback = function(Value)
+		_G.AutoSecondSea = Value
+        StopTween(_G.AutoSecondSea)
+	end    
+})
+
 
 W:AddLabel("[+] Fix FastAttack")
 W:AddLabel("[+] Fix AutoFarm Delay")
@@ -4923,14 +4932,6 @@ local IQ = Window:MakeTab({
 	PremiumOnly = false
 })
 
-IQ:AddToggle({
-	Name = "Auto Second Sea",
-	Default = true,
-	Callback = function(Value)
-		_G.AutoSecondSea = Value
-        StopTween(_G.AutoSecondSea)
-	end    
-})
 
 
 IQ:AddToggle({
