@@ -9,7 +9,7 @@ end
 function CheckQuest() 
     MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
     if World1 then
-        if MyLevel == 1 or MyLevel <= 15 or SelectMonster == "" then -- Bandit
+        if MyLevel == 1 or MyLevel <= 20 or SelectMonster == "" then -- Bandit
             Mon = "Bandit"
             NameQuest = "BanditQuest1"
             LevelQuest = 1
@@ -18,7 +18,7 @@ function CheckQuest()
             CFrameMon = CFrame.new(1353.44885, 3.40935516, 1376.92029, 0.776053488, -6.97791975e-08, 0.630666852, 6.99138596e-08, 1, 2.4612488e-08, -0.630666852, 2.49917598e-08, 0.776053488)
             
             
-        elseif MyLevel == 15 or MyLevel <= 29 or SelectMonster == "Gorilla" then -- Gorilla
+        elseif MyLevel == 20 or MyLevel <= 29 or SelectMonster == "Gorilla" then -- Gorilla
             Mon = "Gorilla"
             NameQuest = "JungleQuest"
             LevelQuest = 2
